@@ -84,7 +84,10 @@ html {
     background-repeat: no-repeat;
     background-position: right;
     background-color: #eeefef;
-    padding-top: 10px;
+    padding: 50px 0; /* Aligné avec les autres sections */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 #section-propos-de-nous-gauche h1 {
@@ -93,9 +96,12 @@ html {
 }
 
 #section-propos-de-nous-gauche {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
 }
-
 
 /* CONTACT*/
 #contact {
@@ -109,7 +115,7 @@ html {
     flex-direction: column;
     text-align: center;
     opacity: 0.8;
-    margin-top: 50px; /* Ajout d'une marge pour éviter le chevauchement */
+    padding: 50px 0; /* Utilisation de padding au lieu de margin-top */
 }
 
 #scrollToTop {
