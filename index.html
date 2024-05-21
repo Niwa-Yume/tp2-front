@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>TP 2 Développement Web</title>
+    <style>
+        #scrollToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            background-color: rgba(85, 85, 85, 0.5); /* Fond gris transparent */
+            color: white;
+            cursor: pointer;
+            border: none;
+            width: 50px; /* Largeur du bouton carré */
+            height: 50px; /* Hauteur du bouton carré */
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+            transition: background-color 0.3s, box-shadow 0.3s; /* Transition pour un effet smooth */
+        }
+
+        #scrollToTop:hover {
+            background-color: rgba(85, 85, 85, 0.8); /* Fond gris légèrement plus opaque au hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre légèrement plus prononcée au hover */
+        }
+    </style>
 </head>
+
 <body>
 
     <!--MENU-->
@@ -20,7 +45,7 @@
     <main>
         <!--PREMIER SECTION-->
         <section id="section-hero">
-            <h1>Bienvenue au Natural Coffee, meilleur café de Genève</h1>
+            <h2>Bienvenue au Natural Coffee, meilleur café de Genève</h2>
         </section>
 
         <!--DEUXIEME SECTION BANNIERE JAUNE -->
@@ -28,17 +53,17 @@
             <div>
                 <img src="assets/assets/icon-vege.svg" alt="panier de legumes">
                 <h1>ALIMENTS FRAIS</h1>
-                <p>Tous nos ingrédients sont frais afin de vous proposer la meilleur qualité posible</p>
+                <p>Tous nos ingrédients sont frais afin de vous proposer la meilleure qualité possible</p>
             </div>
             <div>
-                <img src="assets/assets/icon-coffee.svg" alt="cafe">
+                <img src="assets/assets/icon-coffee.svg" alt="café">
                 <h1>EAU DE SOURCE</h1>
-                <p>L'eau utilisée pour faire nos café vient directement de sources au alentours de Genève.</p>
+                <p>L'eau utilisée pour faire nos cafés vient directement de sources aux alentours de Genève.</p>
             </div>
             <div>
                 <img src="assets/assets/icon-sweet.svg" alt="sucreries">
                 <h1>GOURMAND</h1>
-                <p>Pour accompagner vos déjeuners nous proposons toutes sortes de pâtiseries très gourmandes.</p>
+                <p>Pour accompagner vos déjeuners, nous proposons toutes sortes de pâtisseries très gourmandes.</p>
             </div>
         </section>
 
@@ -60,22 +85,24 @@
 
     <!--FOOTER-->
     <section id="contact">
-        <h1>Contact</h1>
+        <h2>Contact</h2>
         <div>
             <h1>Veggie</h1>
-            <p>3428 Magnolla Avenue Hackettstown, NJ 07840</p>
+            <p>3428 Magnolia Avenue Hackettstown, NJ 07840</p>
         </div>
         <div>
-            <h1>Reservation</h1>
+            <h1>Réservation</h1>
             <p>reservation@veggie.com</p>
             <p>+48-202-555-0114</p>
         </div>
     </section>
 
     <!--Flèche pour remonter en haut de la page-->
-    <button onclick="topFunction()" id="scrollToTop" title="Go to top">TOP TO THE WIN</button>
+    <button id="scrollToTop" title="Go to top" style="display: none;">^</button>
 
-    <!--CODE JAVSCRIPT-->
-    <script src="main.js"></script>
+    <!--CODE JAVASCRIPT-->
+    <script src="javascript/main.js"></script>
+
 </body>
+
 </html>

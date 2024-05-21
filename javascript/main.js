@@ -1,27 +1,27 @@
-//on écoute le chargement du DOM avec la méthode addEventListener et on exécute une fonction
 document.addEventListener('DOMContentLoaded', function () {
-    // Assigner une fonction à l'événement de défilement de la fenêtre
-    window.onscroll = function() {
-        scrollFunction();
-    };
+    var scrollToTopButton = document.getElementById("scrollToTop");
 
-    // Fonction pour afficher ou masquer la flèche en fonction du défilement
+    // Fonction pour afficher ou cacher le bouton
     function scrollFunction() {
-        var mybutton = document.getElementById("scrollToTop");
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            //le 20 correspond à la hauteur de la page avant que la flèche ne s'affiche
-            mybutton.style.display = "block";
+    console.log('FONCTION APPELEE');
+        if (window.scrollY > 20) {
+            scrollToTopButton.style.display = "block";
+            console.log('>BOUTON AFFICHE');
         } else {
-            mybutton.style.display = "none";
+            scrollToTopButton.style.display = "none";
+            console.log('BOUTON CACHE');
         }
     }
 
-    // Fonction pour défiler vers le haut de la page lorsque l'utilisateur clique sur la flèche
-    function topFunction() {
-        document.body.scrollTop = 0; // Pour Safari
-        document.documentElement.scrollTop = 0; // Pour Chrome, Firefox, IE et Opera
-    }
+    // Ajout d'un événement de défilement
+    window.addEventListener('scroll', scrollFunction);
 
-    // Assigner la fonction au bouton
-    document.getElementById("scrollToTop").onclick = topFunction;
+    // Ajout d'un événement de clic sur le bouton pour remonter
+    scrollToTopButton.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        console.log('BOUTON CLIQUE');
+    });
+
+    // Initialisation de l'état du bouton
+    scrollFunction();
 });

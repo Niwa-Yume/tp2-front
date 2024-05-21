@@ -7,6 +7,7 @@ html {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Merriweather', serif;
+    scroll-behavior: smooth;
 }
 
 #navbar {
@@ -48,7 +49,6 @@ html {
     background-image: url(../assets/assets/img/hero.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -80,19 +80,17 @@ html {
 /* Section à propos de nous */
 #section-propos-de-nous {
     background-image: url(../assets/assets/signature.png);
-    min-height: 100vh;
     background-repeat: no-repeat;
     background-position: right;
     background-color: #eeefef;
-    padding: 50px 0; /* Aligné avec les autres sections */
+    min-height: 75vh;
+    padding: 30px 0; /* Réduire le padding pour moins d'espace */
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
-}
-
-#section-propos-de-nous-gauche h1 {
-    margin-bottom: 40px;
-    margin-top: 60px;
+    /*enlever de l'espace en bat*/
+    margin-bottom: 0;
 }
 
 #section-propos-de-nous-gauche {
@@ -101,13 +99,25 @@ html {
     align-items: center;
     flex-direction: column;
     text-align: center;
+    max-width: 800px; /* Limiter la largeur du contenu */
+    margin: 0 auto; /* Centrer le contenu */
 }
 
-/* CONTACT*/
+#section-propos-de-nous-gauche h1 {
+    margin-bottom: 20px; /* Réduire la marge en bas */
+    margin-top: 30px; /* Réduire la marge en haut */
+}
+
+#section-propos-de-nous-gauche p {
+    margin: 0 20px; /* Ajouter des marges latérales pour un meilleur espacement */
+    line-height: 1.6; /* Améliorer la lisibilité */
+}
+
+/* CONTACT */
 #contact {
     background-image: url(../assets/assets/img/contact-bg.png);
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -115,25 +125,34 @@ html {
     flex-direction: column;
     text-align: center;
     opacity: 0.8;
-    padding: 50px 0; /* Utilisation de padding au lieu de margin-top */
+    padding: 50px 0;
+    width: 100%; /* Assure que la section prend toute la largeur */
+    box-sizing: border-box; 
+}
+/* #contact > div permet de cibler les div enfants de #contact */
+#contact > div {
+    width: 100%; /* Chaque div prend toute la largeur de son parent */
+    padding: 20px; /* Ajoute de l'espace à l'intérieur de chaque div */
+    box-sizing: border-box;
 }
 
 #scrollToTop {
-    display: none;
     position: fixed;
     bottom: 20px;
     right: 30px;
     z-index: 99;
     font-size: 18px;
-    border: none;
-    outline: none;
-    background-color: red;
+    background-color: rgba(85, 85, 85, 0.5); /* Fond gris transparent */
     color: white;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 4px;
+    width: 50px; /* Largeur du bouton carré */
+    height: 50px; /* Hauteur du bouton carré */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transition pour un effet smooth */
 }
 
 #scrollToTop:hover {
-    background-color: #555;
+    background-color: rgba(85, 85, 85, 0.8); /* Fond gris légèrement plus opaque au hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre légèrement plus prononcée au hover */
 }
+
