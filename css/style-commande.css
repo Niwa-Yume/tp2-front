@@ -1,0 +1,270 @@
+/* css/style-commande.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f4f4f9;
+    background: linear-gradient(to bottom, #eff1f4, #f9bb00);
+    min-height: 100vh;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 10px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    padding: 10px 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007BFF;
+}
+
+#nav-commande {
+    border: 2px solid black;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#commandes-section,
+#plats-section {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#commandes-section h2,
+#plats-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #333;
+}
+
+#commande-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#commande-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+#commande-input:focus {
+    border-color: #007BFF;
+}
+
+#commande-form button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#commande-form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+#commande-list,
+#plats-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#commande-list li,
+#plats-list li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+#commande-list li:hover,
+#plats-list li:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f1f1f1;
+}
+
+#commande-list li button {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+#commande-list li button:hover {
+    color: darkred;
+}
+
+.plat-item {
+    background: linear-gradient(to right bottom, #eff1f4, #f9bb00);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.plat-item:hover {
+    transform: scale(1.05);
+}
+
+.plat-item h2 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #333;
+}
+
+.plat-item p {
+    margin: 5px 0;
+    color: #666;
+}
+
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    background-color: rgba(85, 85, 85, 0.5);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#scrollToTop:hover {
+    background-color: rgba(85, 85, 85, 0.8);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.swing-in-top-fwd {
+    -webkit-animation: swing-in-top-fwd .5s cubic-bezier(.175, .885, .32, 1.275) both;
+    animation: swing-in-top-fwd .5s cubic-bezier(.175, .885, .32, 1.275) both
+}
+
+
+
+@-webkit-keyframes swing-in-top-fwd {
+    0% {
+        -webkit-transform: rotateX(-100deg);
+        transform: rotateX(-100deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 0
+    }
+
+    100% {
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 1
+    }
+}
+
+@keyframes swing-in-top-fwd {
+    0% {
+        -webkit-transform: rotateX(-100deg);
+        transform: rotateX(-100deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 0
+    }
+
+    100% {
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 1
+    }
+}
+
+
+
+
+
+@media (min-width: 1024px) {
+    nav {
+        justify-content: flex-end;
+    }
+
+    nav ul {
+        justify-content: flex-end;
+    }
+
+    nav ul li {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}

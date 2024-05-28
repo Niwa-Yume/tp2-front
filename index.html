@@ -5,106 +5,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link href="dist/hamburgers.css" rel="stylesheet">
     <title>TP 2 Développement Web</title>
     <style>
         #scrollToTop {
             position: fixed;
             bottom: 20px;
             right: 30px;
-            z-index: 99;
-            font-size: 18px;
             background-color: rgba(85, 85, 85, 0.5);
-            /* Fond gris transparent */
             color: white;
-            cursor: pointer;
             border: none;
             width: 50px;
-            /* Largeur du bouton carré */
             height: 50px;
-            /* Hauteur du bouton carré */
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Ombre légère */
-            transition: background-color 0.3s, box-shadow 0.3s;
-            /* Transition pour un effet smooth */
         }
 
         #scrollToTop:hover {
             background-color: rgba(85, 85, 85, 0.8);
-            /* Fond gris légèrement plus opaque au hover */
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            /* Ombre légèrement plus prononcée au hover */
         }
     </style>
 </head>
 
 <body>
-
-    <!--MENU-->
     <nav id="navbar">
         <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="">Commande</a></li>
+            <li id="nav-accueil"><a href="index.html">Accueil</a></li>
+            <li id="nav-commande"><a href="commande.html">Commandes</a></li>
         </ul>
     </nav>
 
-    <!--CONTENU-->
-    <main>
-        <!--PREMIER SECTION-->
-        <section id="section-hero">
-            <h2>Bienvenue au Natural Coffee, meilleur café de Genève</h2>
-        </section>
+    <section id="section-hero" class="text-pop-up-top">
+        <h2>Bienvenue au Natural Coffee, meilleur café de Genève</h2>
+    </section>
 
-        <!--DEUXIEME SECTION BANNIERE JAUNE -->
-        <section id="section-banniere-jaune">
-            <div>
-                <img src="assets/assets/icon-vege.svg" alt="panier de legumes">
-                <h1>ALIMENTS FRAIS</h1>
-                <p>Tous nos ingrédients sont frais afin de vous proposer la meilleure qualité possible</p>
-            </div>
-            <div>
-                <img src="assets/assets/icon-coffee.svg" alt="café">
-                <h1>EAU DE SOURCE</h1>
-                <p>L'eau utilisée pour faire nos cafés vient directement de sources aux alentours de Genève.</p>
-            </div>
-            <div>
-                <img src="assets/assets/icon-sweet.svg" alt="sucreries">
-                <h1>GOURMAND</h1>
-                <p>Pour accompagner vos déjeuners, nous proposons toutes sortes de pâtisseries très gourmandes.</p>
-            </div>
-        </section>
-
-        <!--TROISIEME SECTION-->
-        <section id="section-propos-de-nous">
-            <div id="section-propos-de-nous-gauche">
-                <h1>A propos de nous</h1>
-                <div>
-                    <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts
-                        black-eyed pea prairie turnip leek lentil turnip greens parsnip</p>
-                </div>
-            </div>
-            <div id="section-propos-de-nous-droite">
-                <div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!--FOOTER-->
-    <section id="contact">
-        <h2>Contact</h2>
-        <div>
-            <h1>Veggie</h1>
-            <p>3428 Magnolia Avenue Hackettstown, NJ 07840</p>
+    <section id="section-banniere-jaune" class="fade-in">
+        <div class="slide-in-blurred-top">
+            <img src="assets/assets/icon-vege.svg" alt="panier de legumes">
+            <h1>ALIMENTS FRAIS</h1>
+            <p>Tous nos ingrédients sont frais afin de vous proposer la meilleure qualité possible</p>
         </div>
-        <div>
-            <h1>Réservation</h1>
-            <p>reservation@veggie.com</p>
-            <p>+48-202-555-0114</p>
+        <div class="slide-in-blurred-top">
+            <img src="assets/assets/icon-coffee.svg" alt="café">
+            <h1>EAU DE SOURCE</h1>
+            <p>L'eau utilisée pour faire nos cafés vient directement de sources aux alentours de Genève.</p>
+        </div>
+        <div class="slide-in-blurred-top">
+            <img src="assets/assets/icon-sweet.svg" alt="sucreries">
+            <h1>GOURMAND</h1>
+            <p>Pour accompagner vos déjeuners, nous proposons toutes sortes de pâtisseries très gourmandes.</p>
         </div>
     </section>
 
-    <!--Flèche pour remonter en haut de la page-->
+
+    <section id="section-propos-de-nous">
+        <h1>A propos de nous</h1>
+        <div>
+            <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. <br> Bunya nuts
+                black-eyed pea prairie turnip leek lentil turnip greens parsnip</p>
+        </div>
+        <div>
+            <img src="assets/assets/signature.png" alt="signature">
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="text-pop-up-top">Contact Us</h2>
+        <div id="veggie-reservation">
+            <div id="veggie">
+                <h1>Veggie</h1>
+                <p>3428 Magnolia Avenue Hackettstown, NJ 07840</p>
+            </div>
+            <div id="reservation">
+                <h1>Réservation</h1>
+                <p>reservation@veggie.com</p>
+                <p>+48-202-555-0114</p>
+            </div>
+        </div>
+    </section>
     <button id="scrollToTop" title="Go to top" style="display: none;">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16"
@@ -113,9 +92,27 @@
         </svg>
     </button>
 
-    <!--CODE JAVASCRIPT-->
-    <script src="javascript/main.js"></script>
 
+    <div class="loader">
+        <div class="panWrapper">
+            <div class="pan">
+                <div class="food"></div>
+                <div class="panBase"></div>
+                <div class="panHandle"></div>
+            </div>
+            <div class="panShadow"></div>
+        </div>
+    </div>
+
+
+    <!--JAVASCRIPT-->
+    <script src="javascript/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.loader').hide();/*je cache le loader après le chargement de la page*/
+        });
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commandes</title>
+    <link rel="stylesheet" href="css/style-commande.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li id="nav-accueil"><a href="index.html" id="accueil">Accueil</a></li>
+            <li id="nav-commande"><a href="#" id="commandes">Commandes</a></li>
+        </ul>
+    </nav>
+
+    <div id="content">
+        <section id="commandes-section">
+            <h2>Liste des commandes</h2>
+            <p id="commande-count">Nombre de commandes: 0</p>
+            <form id="commande-form">
+                <input type="text" id="commande-input" placeholder="Entrez votre commande">
+                <button type="submit">Envoyer la commande</button>
+            </form>
+            <button id="clear-commandes">Supprimer toutes les commandes</button>
+            <ul id="commande-list"></ul>
+        </section>
+
+        <section id="plats-section">
+            <h2>Plats du jour</h2>
+            <ul id="plats-list" class="swing-in-top-fwd"></ul>
+        </section>
+    </div>
+
+    <div class="loader">
+        <div class="panWrapper">
+            <div class="pan">
+                <div class="food"></div>
+                <div class="panBase"></div>
+                <div class="panHandle"></div>
+            </div>
+            <div class="panShadow"></div>
+        </div>
+    </div>
+
+    <button id="scrollToTop" title="Retour en haut">↑</button>
+
+    <script src="javascript/commande.js"></script>
+    <script src="javascript/platDuJour.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.loader').hide();
+            
+            $('#scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, '300');
+            });
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#scrollToTop').fadeIn();
+                } else {
+                    $('#scrollToTop').fadeOut();
+                }
+            });
+        });
+    </script>
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Commandes. All rights reserved.</p>
+            <p>Contact us: <a href="mailto:contact@commandes.com">contact@commandes.com</a></p>
+            <div class="social-media">
+                <!--image de réseau en CDN-->
+                <img src="https://img.icons8.com/ios/50/000000/facebook-new.png" alt="facebook">
+                <img src="https://img.icons8.com/ios/50/000000/instagram-new.png" alt="instagram">
+                <img src="https://img.icons8.com/ios/50/000000/twitter.png" alt="twitter">
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>
