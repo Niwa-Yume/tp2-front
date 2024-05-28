@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const commandeCount = document.getElementById('commande-count');
     const clearButton = document.getElementById('clear-commandes');
 
-    let commandes = JSON.parse(localStorage.getItem('commandes')) || [];
+    let commandes = JSON.parse(localStorage.getItem('commandes')) || []; 
 
     function updateCommandeCount() {
         commandeCount.textContent = `Nombre de commandes: ${commandes.length}`;
@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function saveCommandes() {
         localStorage.setItem('commandes', JSON.stringify(commandes));
     }
-    //permrt de sauvegarder les commandes dans le local storage
-    //explication fonctionnement : la fonction va sauvegarder les commandes dans le local storage en les transformant en string 
-    function renderCommandes() {
+    
+    
+    function renderCommandes() { 
         commandeList.innerHTML = '';
 
         //forEach permet de parcourir un tableau et d'executer une fonction pour chaque élément du tableau
@@ -30,20 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
             deleteButton.addEventListener('click', () => {
                 deleteCommande(index);
             });
-            //permet de supprimer une commande
-            const editButton = document.createElement('button');
-            editButton.textContent = 'Modifier';
-            editButton.addEventListener('click', () => {
-                editCommande(index);
-            });
-            //permet de modifier une commande
+
+            
             const duplicateButton = document.createElement('button');
             duplicateButton.textContent = 'Dupliquer';
             duplicateButton.addEventListener('click', () => {
                 duplicateCommande(index);
             });
-            //append child permet de rajouter un élément enfant à un élément parent
-            li.appendChild(editButton);
+
+
             li.appendChild(duplicateButton);
             li.appendChild(deleteButton);
             commandeList.insertBefore(li, commandeList.firstChild);//insertBefore permet d'insérer un élément avant un autre élément
@@ -67,14 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
         saveCommandes();
     }
 
-    function editCommande(index) {
-        const newCommande = prompt('Modifier la commande:', commandes[index]);
-        if (newCommande !== null && newCommande.trim() !== '') {
-            commandes[index] = newCommande.trim();
-            renderCommandes();
-            saveCommandes();
-        }
-    }
 
     function duplicateCommande(index) {
         commandes.unshift(commandes[index]);
